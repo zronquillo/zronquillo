@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env*
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.vercel/
+
+# Internal working notes: this repo is public, so keep review notes local
+CONTENT-REVIEW.md
+
+# Local AI-tooling files (re-created by `next dev`); not part of the public repo
+AGENTS.md
+CLAUDE.md
