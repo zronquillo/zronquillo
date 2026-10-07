@@ -38,3 +38,50 @@ export const aboutStory = {
   ],
   note: "I support the digital and administrative side of healthcare businesses. I am not a licensed healthcare professional and do not provide clinical services.",
 } as const;
+
+// About page structure. Wording reuses the approved positioning and the service
+// capability lists. It introduces no new facts, dates, credentials or clients.
+export const aboutPage = {
+  storyBlocks: [
+    { heading: "Where it started", text: aboutStory.paragraphs[0] },
+    { heading: "How it grew", text: aboutStory.paragraphs[1] },
+    { heading: "Where I focus now", text: aboutStory.paragraphs[2] },
+  ],
+  closingLine: aboutStory.paragraphs[3],
+  pillars: [
+    {
+      label: "Creative",
+      title: "Content and design",
+      text: "Social media content, graphics, short-form video and captions that look consistent and read naturally.",
+    },
+    {
+      label: "Technical",
+      title: "Websites, funnels and automation",
+      text: "WordPress and HTML/CSS/JavaScript websites, plus GoHighLevel funnels, calendars and workflows.",
+    },
+    {
+      label: "Operational",
+      title: "Everyday operations",
+      text: "Inbox and customer support, scheduling and follow-up, and a steady process behind it all.",
+    },
+  ],
+  healthcare: {
+    heading: "Healthcare focus",
+    lead: "My current focus is the administrative and digital side of healthcare practices.",
+    areas: [
+      "Administrative support",
+      "Patient-facing communication",
+      "Appointment support",
+      "Intake and follow-up support",
+      "Inbox support",
+      "Practice operations",
+      "Healthcare digital support",
+    ],
+    note: aboutStory.note,
+  },
+  capabilities: {
+    heading: "Five areas of work",
+    intro:
+      "Each one stands on its own. The Services page has the full detail for every area.",
+  },
+} as const;
