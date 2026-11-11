@@ -7,3 +7,4 @@ export * from "./experience";
 export * from "./certifications";
 export * from "./tools";
 export * from "./social";
+export * from "./portfolioPage";
