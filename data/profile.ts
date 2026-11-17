@@ -1,22 +1,17 @@
 export const hero = {
   name: "Zipporah “Zi” Ronquillo",
   title: "Healthcare & Digital Growth Specialist",
+  eyebrow: "Websites · Social Media · Booking & Follow-up",
   message:
-    "I help healthcare and service-based businesses build stronger digital systems — from content and social media to e-commerce, websites, funnels, automation, and digital operations.",
-  primaryCta: { label: "View My Work", href: "/portfolio" },
-  secondaryCta: { label: "Let's Work Together", href: "/contact" },
-  capabilities: [
-    "Social Media",
-    "Healthcare Support",
-    "Shopify",
-    "GHL & Automation",
-    "Websites",
-  ],
+    "I build one connected system for clinics and law firms — content that gets you seen, follow-up that books the appointment, and reminders and reviews that keep them coming back.",
+  primaryCta: { label: "See My Work", href: "/portfolio" },
+  secondaryCta: { label: "Let's Talk", href: "/contact" },
+  capabilities: ["Dental", "Medical", "Veterinary", "Legal"],
 } as const;
 
 export const whoIHelp = {
-  heading: "Who I help",
-  body: "Healthcare practices and service-based businesses that want their social media, website, online store and follow-up to work together, supported by someone who understands customer experience and day-to-day operations.",
+  heading: "Who I work with",
+  body: "Dental, medical and veterinary clinics, and law firms — practices that run on appointments, where a slow reply can mean a lost patient or client. I handle the digital side so you can focus on the people in front of you.",
 } as const;
 
 export const careerProgression = [

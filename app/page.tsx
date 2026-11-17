@@ -1,16 +1,14 @@
-import Link from "next/link";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
-import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import ContactCTA from "@/components/ContactCTA";
 import {
   activeSocialLinks,
+  bookedSystem,
   careerProgression,
   hero,
   projects,
-  services,
   site,
   whoIHelp,
 } from "@/data";
@@ -26,11 +24,12 @@ const jsonLd = {
   sameAs: activeSocialLinks.map((s) => s.url),
   description: site.description,
   knowsAbout: [
-    "Social media marketing",
-    "Healthcare virtual assistance",
-    "Shopify and e-commerce",
-    "GoHighLevel, CRM and automation",
-    "WordPress and website development",
+    "Website design for clinics and law firms",
+    "Social media marketing and content",
+    "GoHighLevel CRM, booking and automation",
+    "Email and SMS follow-up and reminders",
+    "AI chatbots and voice AI",
+    "Reputation management",
   ],
 };
 
@@ -101,7 +100,7 @@ export default function Home() {
         </div>
         <Container className="relative py-20 sm:py-32">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-clay">
-            {hero.title}
+            {hero.eyebrow}
           </p>
           <h1 className="max-w-4xl text-5xl leading-[1.04] text-ink sm:text-7xl lg:text-[5.5rem]">
             {hero.name}
@@ -117,7 +116,7 @@ export default function Home() {
           </div>
           <ul
             className="mt-14 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium sm:gap-x-3 text-ink-soft sm:text-base"
-            aria-label="Capabilities"
+            aria-label="Industries"
           >
             {hero.capabilities.map((c, i) => (
               <li key={c} className="flex items-center gap-3">
@@ -142,25 +141,48 @@ export default function Home() {
         </Container>
       </section>
 
-      <section aria-labelledby="home-services">
+      <section aria-labelledby="home-system">
         <Container className="py-20 sm:py-28">
-          <div id="home-services">
+          <div id="home-system">
             <SectionHeading
-              eyebrow="Services"
-              title="What I can help with"
-              intro="Five service areas. Each stands on its own, and together they cover content, storefront, website and the systems behind them."
+              eyebrow={bookedSystem.eyebrow}
+              title={bookedSystem.title}
+              intro={bookedSystem.intro}
             />
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services#${s.slug}`}
-                className="block rounded-2xl focus-visible:outline-offset-4 [&>article]:transition-[background-color,border-color,transform,box-shadow] [&>article]:duration-[280ms] [&>article]:ease-out [&:hover>article]:-translate-y-[3px] [&:hover>article]:border-clay/50 [&:hover>article]:bg-sand/70 [&:hover>article]:shadow-[0_8px_20px_-14px_rgba(28,26,23,0.25)] [&:focus-visible>article]:-translate-y-[3px] [&:focus-visible>article]:border-clay/50 [&:focus-visible>article]:bg-sand/70 [&:focus-visible>article]:shadow-[0_8px_20px_-14px_rgba(28,26,23,0.25)]"
+          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {bookedSystem.stages.map((stage) => (
+              <li
+                key={stage.number}
+                className="flex h-full flex-col rounded-2xl border border-line bg-white/60 p-7"
               >
-                <ServiceCard service={s} />
-              </Link>
+                <p className="font-serif text-3xl text-clay" aria-hidden="true">
+                  {stage.number}
+                </p>
+                <h3 className="mt-3 text-2xl leading-snug text-ink">
+                  {stage.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-ink-soft">
+                  {stage.summary}
+                </p>
+                <ul
+                  className="mt-5 flex flex-wrap gap-2"
+                  aria-label={`${stage.title}: what's included`}
+                >
+                  {stage.items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full bg-ivory-deep px-3 py-1.5 text-sm text-ink-soft"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </li>
             ))}
+          </ol>
+          <div className="mt-10">
+            <Button href="/contact">Talk to me about your practice</Button>
           </div>
         </Container>
       </section>
@@ -170,7 +192,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Selected work"
             title="Selected work"
-            intro="Selected website projects across healthcare, dental, and veterinary care. The full portfolio has more."
+            intro="Websites and content built for dental, medical, veterinary and legal practices. The full portfolio has more."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
